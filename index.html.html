@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Golla Karthik | Portfolio</title>
+  <meta property="og:title" content="Golla Karthik – Portfolio" />
+  <meta property="og:description" content="Explore my projects, case studies, and career journey in one place." />
+  <meta property="og:image" content="https://gkarthikportfolio.netlify.app/images/portfolio-preview.png" />
+  <meta property="og:url" content="https://gkarthikportfolio.netlify.app" />
+  <meta property="og:type" content="website" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #f0fdf4;
+      color: #222;
+      line-height: 1.6;
+      transition: all 0.3s ease;
+      padding-bottom: 60px;
+    }
+    body.dark {
+      background: #121212;
+      color: #e0e0e0;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header img.profile-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #2ecc71;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.2rem;
+    }
+    header p.title {
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+    .social-links {
+      margin-bottom: 0.8rem;
+    }
+    .social-links a {
+      text-decoration: none;
+      color: #2ecc71;
+      margin: 0 0.7rem;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+    .social-links a:hover {
+      color: #27ae60;
+    }
+    .phone {
+      font-size: 1rem;
+      color: #555;
+      margin-top: 0.3rem;
+    }
+    .toggle-theme {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .section {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+    }
+    body.dark .section {
+      background: #1e1e1e;
+    }
+    h2 {
+      color: #2ecc71;
+      margin-bottom: 1rem;
+    }
+
+    /* Updated Skills section styles */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+      justify-items: center;
+    }
+    .skill-item {
+      background: #d1fae5;
+      border-radius: 10px;
+      padding: 8px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+    body.dark .skill-item {
+      background: #2ecc71;
+      color: #121212;
+      box-shadow: none;
+    }
+    .skill-icon {
+      font-size: 24px; /* smaller icons */
+      margin-bottom: 6px;
+      color: #27ae60;
+      transition: color 0.3s ease;
+    }
+    body.dark .skill-icon {
+      color: #145214;
+    }
+    .skill-label {
+      font-size: 0.85rem; /* smaller text */
+      text-align: center;
+      font-weight: 600;
+      color: #222;
+    }
+    body.dark .skill-label {
+      color: #121212;
+    }
+
+    /* Rest of your original styles */
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background-color: #e6fff4;
+      border: 1px solid #b2f5ea;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    body.dark .card {
+      background-color: #2a2a2a;
+      color: #f0f0f0;
+    }
+    .card h3 {
+      margin-bottom: 0.5rem;
+    }
+    .project-img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+    }
+    .github-link {
+      display: inline-block;
+      margin-top: 0.3rem;
+      color: #2ecc71;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    .github-link:hover {
+      color: #27ae60;
+    }
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+    .resume-download {
+      display: block;
+      margin-top: 1rem;
+      text-align: center;
+    }
+    .resume-download a {
+      text-decoration: none;
+      color: #2ecc71;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    .resume-download a:hover {
+      color: #27ae60;
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-theme" title="Toggle Light/Dark">🌙</button>
+  <header>
+    <img src="images/profile_photo.jpg" alt="Profile Photo" class="profile-photo" />
+    <h1>Golla Karthik</h1>
+    <p class="title">Business Analyst</p>
+    <div class="social-links">
+      <a href="mailto:gollkarthk@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/gollakarthk/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/zlatangk" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+    <div class="phone">
+  📞 <a href="https://wa.me/917209608470" target="_blank">7209608470</a>
+    </div>
+    <div class="resume-download">
+      <a href=https://github.com/zlatangk/Portfolio/raw/main/Golla_Karthik_Resume.pdf target="_blank"><i class="fas fa-download"></i> Download Resume</a>
+    </div>
+  </header>
+
+  <section class="section">
+    <h2>Profile Summary</h2>
+    <p>
+      Dynamic and results-driven Business Analyst with over three years of experience in stakeholder engagement, project documentation, and comprehensive project delivery. Dedicated to enhancing efficiencies and providing solutions that align with organizational objectives through expertise in diverse analytical tools and methodologies. Skilled in facilitating communication between clients and technical teams to ensure successful project execution. Demonstrated success in mentorship, performance management, and requirements analysis and proficient in evaluating business processes and promoting user-focused product improvements.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-item">
+        <i class="fas fa-project-diagram skill-icon" title="Project Management"></i>
+        <div class="skill-label">Project Management:<br> Agile, Scrum</div>
+      </div>
+      <div class="skill-item">
+        <i class="fas fa-file-alt skill-icon" title="Documentation & Requirements"></i>
+        <div class="skill-label">Documentation:<br> BRDs, FRDs, Use Cases</div>
+      </div>
+      <div class="skill-item">
+        <i class="fas fa-vial skill-icon" title="Testing & Validation"></i>
+        <div class="skill-label">Testing & Validation:<br> UAT, Regression</div>
+      </div>
+      <div class="skill-item">
+        <i class="fas fa-users skill-icon" title="Stakeholder Engagement"></i>
+        <div class="skill-label">Stakeholder Engagement:<br> Workshops, Change Management</div>
+      </div>
+      <div class="skill-item">
+        <i class="fas fa-search skill-icon" title="Strategic Analysis"></i>
+        <div class="skill-label">Strategic Analysis:<br> Gap Analysis, Optimization</div>
+      </div>
+      <div class="skill-item">
+        <i class="fas fa-tools skill-icon" title="Tools"></i>
+        <div class="skill-label">Tools:<br> SQL, Python, Excel, Visio</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Work Experience</h2>
+    <p><strong>TCS — Business Analyst</strong><br />May 2022 to Present</p>
+    <ul>
+      <li>Collaborated with cross-functional teams to collect, document, and analyze business requirements, resulting in a project success rate of 95% by ensuring alignment with strategic objectives.</li>
+      <li>Executed collaborative gap analysis to ensure thorough Functional and Integration testing across diverse application modules and custom components, engaging with cross-functional teams to clarify requirements, ultimately achieving a 20% decrease in design modifications.</li>
+      <li>Authored detailed Business Requirements Documents (BRDs), Functional Requirements Documents (FRDs), and use case scenarios, functional test cases, and scenario documentation, which contributed to improved project clarity and expedited development timelines by 15%.</li>
+      <li>Facilitated workshops and stakeholder meetings to effectively gather input, resulting in a 20% increase in Client satisfaction and enhanced project buy-in across various departments.</li>
+      <li>Executed & implemented comprehensive test plans, designs, and development processes, to ensure that solutions met established requirements, achieving a 90% reduction in post-deployment issues.</li>
+      <li>Successfully implemented a thorough transformation in the delivery of Performance Management, Career Development, Succession Planning, and Collaborative Workspace modules. Additionally, provided support to clients during the post-Transition and Deployment phase by addressing Queries related to service delivery, managing incidents, and processing change and service requests.</li>
+      <li>Oversaw ERP change management initiatives, developing training materials and documentation that led to a 100% adoption rate and ensured a seamless transition for users.</li>
+    </ul>
+    <p><strong>BYJU’S — Recruitment Associate</strong><br />2021</p>
+    <ul>
+      <li>Managed the entire recruitment process, which included sourcing candidates, performing initial screenings via telephone interviews, and facilitating Zoom interviews with selected candidates.</li>
+      <li>Oversaw a pipeline of prospective candidates by utilizing diverse recruitment platforms such as LinkedIn and Naukri to source, evaluate, and select suitable candidates.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Case Studies</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="images/pizza_runner.jpeg" alt="Pizza Runner Case Study" class="project-img" />
+        <h3>Pizza Runner SQL Case Study</h3>
+        <p>Analyzed and optimized SQL queries for the Pizza Runner database to improve operational reporting and business insights.</p>
+        <a href="https://github.com/zlatangk/pizza_runner_sql_case-study" target="_blank" class="github-link">View Case Study</a>
+      </div>
+      <div class="card">
+        <img src="images/dannys_diner.jpeg" alt="Danny's Diner Case Study" class="project-img" />
+        <h3>Danny's Diner SQL Case Study</h3>
+        <p>Conducted detailed data analysis and visualization to assist in strategic decision-making for Danny’s Diner operations.</p>
+        <a href="https://github.com/zlatangk/dannys-diner-sql" target="_blank" class="github-link">View Case Study</a>
+      </div>
+      <div class="card">
+        <img src="images/pizza_hut.jpeg" alt="Pizza Hut Case Study" class="project-img" />
+        <h3>Pizza Hut Analysis Case Study</h3>
+        <p>Performed comprehensive business analysis and reporting for Pizza Hut’s sales and customer data.</p>
+        <a href="https://github.com/zlatangk/Pizza_hut_Analysis" target="_blank" class="github-link">View Case Study</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Academic Projects</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>Work Life Balance & Its Importance</h3>
+        <p>Analyzed factors affecting work‑life balance, identifying Work from Office (WFO) and Work from Home (WFH) as standout contributors. Investigated the impact of COVID‑19 on employee preferences, noting a shift towards WFH over WFO which concludes that the WFH/ Hybrid model is a forward‑looking approach for organizational work culture.</p>
+      </div>
+      <div class="card">
+        <h3>Consumer Perception on E-Vehicles</h3>
+        <p>Analyzed comprehensive secondary data to draw conclusions on consumer perceptions of e‑vehicles. Forecasted market trends for e‑vehicles and examined the shift in customer preferences towards adopting electric vehicles.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Education</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>MBA - HR & Marketing</h3>
+        <p><strong>Vignan Institute of Information Technology</strong></p>
+        <p>2019 – 2021</p>
+      </div>
+      <div class="card">
+        <h3>B.Tech - Manufacturing Engineering</h3>
+        <p><strong>National Institute of Foundry and Forge Technology</strong></p>
+        <p>2014 – 2018</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Golla Karthik. All rights reserved.
+  </footer>
+
+  <script>
+    const toggleBtn = document.querySelector('.toggle-theme');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      if(document.body.classList.contains('dark')){
+        toggleBtn.textContent = '☀️';
+      } else {
+        toggleBtn.textContent = '🌙';
+      }
+    });
+  </script>
+</body>
+</html>
